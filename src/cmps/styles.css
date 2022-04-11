@@ -42,6 +42,45 @@
 .todos {
   display: flex;
   justify-content: space-evenly;
-  width:90%;
+  width: 90%;
   flex-wrap: wrap;
+}
+.todo-item {
+  display: flex;
+  align-items: center;
+  width: 29.5%;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+  background-color: wheat;
+}
+.todo-item-txt {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+.todo-item-txt:focus {
+  outline: none;
+}
+.icon {
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .todo-item {
+    width: 40%;
+  }
+}
+@media (max-width: 700px) {
+  .input {
+    width: 95%;
+  }
+  .todos {
+    width: 95%;
+  }
+  .todo-item {
+    width: 100%;
+  }
 }
