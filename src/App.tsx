@@ -1,15 +1,26 @@
 import React, { useState } from "react"
 import "./App.css"
 import InputField from "./cmps/InputField"
+import TodoList from "./cmps/TodoList"
+import { Todo } from "./todo.model"
 
 const App: React.FC = () => {
   const [todo, setTodo] = useState<string>("")
-  console.log(todo);
-  
+  const [todos, setTodos] = useState<Todo[]>([])
+  const handleAdd = (ev: React.FormEvent) => {
+    ev.preventDefault()
+    if (todo) {
+      setTodos([...todos, { id: Date.now(), todo, isDone: false }])
+      setTodo("")
+    }
+  }
+  console.log(todos)
   return (
     <div className='App'>
       <span className='heading'>TalTodo</span>
-      <InputField todo={todo} setTodo={setTodo}/>
+      <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+      <TodoList todos={todos} setTodos={setTodos} />
+     
     </div>
   )
 }

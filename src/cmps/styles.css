@@ -33,9 +33,15 @@
   box-shadow: 0 0 10px black;
 }
 .input-btn:hover {
-    background-color: #388ae2;
-  }
-  .input-btn:active {
-      transform:scale(0.8);
-      box-shadow: 0 0 5px black;
-    }
+  background-color: #388ae2;
+}
+.input-btn:active {
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
+}
+.todos {
+  display: flex;
+  justify-content: space-evenly;
+  width:90%;
+  flex-wrap: wrap;
+}
